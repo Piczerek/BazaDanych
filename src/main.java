@@ -2,16 +2,20 @@
 public class main {
 
 	public static void main(String[] args) throws Exception {
-		czytanie czyt = new czytanie();
-		czyt.main(args);
-		czyt=null;
-		Stringchange rozprocentowanie = new Stringchange();
-		rozprocentowanie.main(args);
-		rozprocentowanie=null;
-		System.out.println("GUNWO JESZCZE");
-		czyszczenie czysc = new czyszczenie();
-		czysc.main(args);
-		czysc=null;
+
+		First_Step first= new First_Step();
+		first.StartScript();
+		
+		Second_Step second = new Second_Step();
+		second.porzadkowanie(first.getExcelColumnQuantity(), first.getComponentColumn(), first.getMonoComponentIndicatorColumn());
+		second=null;	
+		
+		Third_Step third = new Third_Step();
+		third.porzadkowanie(first.getExcelColumnQuantity(), first.getComponentColumn(), first.getMonoComponentIndicatorColumn());
+		third=null;
+		
+		System.out.println("The end");
+		
 		}
 
 	}
